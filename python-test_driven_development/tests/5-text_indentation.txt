@@ -1,0 +1,59 @@
+===========================
+How to Use 5-text_indentation.py
+===========================
+
+This module defines the `text_indentation` function, which processes a text and adds two new lines after every `.`, `?`, and `:` character. It ensures no spaces are left at the beginning or end of the resulting lines.
+
+Usage
+=====
+
+Basic usage:
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello. How are you? Fine: great.")
+    Hello.
+
+    How are you?
+
+    Fine:
+
+    great.
+
+::
+
+    >>> text_indentation("A single sentence.")
+    A single sentence.
+
+Error Handling
+==============
+
+Type errors:
+
+::
+
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Spaces Handling
+===============
+
+Handles extra spaces properly:
+
+::
+
+    >>> text_indentation("  Leading spaces should not matter.   Extra?")
+    Leading spaces should not matter.
+
+    Extra?
+
+    >>> text_indentation("Text : with spaces.   ")
+    Text:
+
+    with spaces.
