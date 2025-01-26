@@ -20,6 +20,7 @@ Basic usage:
     Fine:
     <BLANKLINE>
     great.
+    <BLANKLINE>
 
 ::
 
@@ -56,7 +57,7 @@ Handles extra spaces properly:
     <BLANKLINE>
 
     >>> text_indentation("Text : with spaces.   ")
-    Text:
+    Text :
     <BLANKLINE>
     with spaces.
     <BLANKLINE>
