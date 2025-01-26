@@ -54,3 +54,15 @@ Dividing by infinity:
     >>> matrix = [[1, 2], [3, 4]]
     >>> matrix_divided(matrix, float('inf'))
     [[0.0, 0.0], [0.0, 0.0]]
+
+Missing arguments:
+
+::
+
+    >>> matrix_divided([[1, 2], [3, 4]])
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
