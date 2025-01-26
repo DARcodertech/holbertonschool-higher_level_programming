@@ -2,13 +2,15 @@
 """
 function that print square
 """
+
+
 def print_square(size):
     """
     Prints a square with the character '#'.
-    
+
     Args:
         size (int): The size length of the square.
-    
+
     Raises:
         TypeError: If size is not an integer or if it's a float less than 0.
         ValueError: If size is less than 0.
