@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+function that print a text
+"""
 def text_indentation(text):
     """
     prints a text with 2 new lines after each of these characters: ., ?, :
@@ -9,7 +12,7 @@ def text_indentation(text):
     skip = True
     for i in text:
         result += i
-        if char in ".?:":
+        if i in ".?:":
             result += "\n\n"
             skip = True
         elif i == " " and skip:
