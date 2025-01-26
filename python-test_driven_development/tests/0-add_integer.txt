@@ -38,3 +38,7 @@ Type errors:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+        ...
+    OverflowError: cannot convert float infinity to integer
+    >>> add_integer(-10, float('-inf'))
+    Traceback (most recent call last):
