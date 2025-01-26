@@ -51,7 +51,7 @@ empty first name:
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("")
-    my name is  
+    My name is  
 
 empty last name:
 
@@ -59,4 +59,4 @@ empty last name:
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("Alice", "")
-    my name is Alice 
+    My name is Alice 
