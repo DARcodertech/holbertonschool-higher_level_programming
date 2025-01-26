@@ -9,8 +9,6 @@ Usage
 
 Basic usage:
 
-::
-
     >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(1, 2)
     3
@@ -26,8 +24,6 @@ Error Handling
 
 Type errors:
 
-::
-
     >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(4, "School")
     Traceback (most recent call last):
@@ -38,7 +34,3 @@ Type errors:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
-        ...
-    OverflowError: cannot convert float infinity to integer
-    >>> add_integer(-10, float('-inf'))
-    Traceback (most recent call last):
