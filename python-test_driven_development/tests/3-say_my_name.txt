@@ -1,0 +1,44 @@
+====================================
+How to Use 3-say_my_name.py
+====================================
+
+This module defines the `say_my_name` function, which prints a person's name
+in the format: "My name is <first name> <last name>". The last name is optional.
+
+Usage
+=====
+
+Basic usage:
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Error Handling
+==============
+
+Type errors:
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("John", 42)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Edge cases:
+
+::
+
+    >>> say_my_name("")
+    My name is  
+    >>> say_my_name("Alice")
+    My name is Alice 
