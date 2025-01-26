@@ -4,6 +4,9 @@
     it checks for errors and gives a new matrix with rounded results
 """
 def matrix_divided(matrix, div):
+    """
+    this divides all numbers in a matrix by div
+    """
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     
