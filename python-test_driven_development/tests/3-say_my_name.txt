@@ -21,24 +21,42 @@ Basic usage:
 Error Handling
 ==============
 
-Type errors:
+missing arguments:
 
 ::
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
-    >>> say_my_name(12, "White")
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+type errors:
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name(12, "Smith")
     Traceback (most recent call last):
     TypeError: first_name must be a string
-
     >>> say_my_name("John", 42)
     Traceback (most recent call last):
     TypeError: last_name must be a string
 
-Edge cases:
+Edge Cases
+==========
+
+empty first name:
 
 ::
 
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("")
-    My name is  
-    >>> say_my_name("Alice")
-    My name is Alice 
+    my name is  
+
+empty last name:
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Alice", "")
+    my name is Alice 
