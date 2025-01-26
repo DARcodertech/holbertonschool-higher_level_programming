@@ -14,17 +14,18 @@ Basic usage:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
     >>> text_indentation("Hello. How are you? Fine: great.")
     Hello.
-
+    <BLANKLINE>
     How are you?
-
+    <BLANKLINE>
     Fine:
-
+    <BLANKLINE>
     great.
 
 ::
 
     >>> text_indentation("A single sentence.")
     A single sentence.
+    <BLANKLINE>
 
 Error Handling
 ==============
@@ -50,10 +51,12 @@ Handles extra spaces properly:
 
     >>> text_indentation("  Leading spaces should not matter.   Extra?")
     Leading spaces should not matter.
-
+    <BLANKLINE>
     Extra?
+    <BLANKLINE>
 
     >>> text_indentation("Text : with spaces.   ")
     Text:
-
+    <BLANKLINE>
     with spaces.
+    <BLANKLINE>
