@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-    """
+"""
     add two integers and calculate it
-    """
+"""
 def add_integer(a, b=98):
     """
     adds two integers
