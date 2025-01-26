@@ -34,3 +34,25 @@ Type errors:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+Special Cases
+=============
+
+Handling NaN (Not-a-Number):
+
+    >>> add_integer(float('nan'), 10)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Handling float overflow:
+
+    >>> add_integer(float('inf'), 10)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(-10, float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
