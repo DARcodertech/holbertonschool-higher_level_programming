@@ -2,6 +2,8 @@
 """
 a class Square that defines a square
 """
+
+
 class Square:
     """a class Square that defines a square"""
     def __init__(self, size=0, position=(0, 0)):
@@ -37,6 +39,7 @@ class Square:
         ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
     def area(self):
         """return multpkcation of size"""
         return self.__size * self.__size
