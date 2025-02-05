@@ -1,0 +1,37 @@
+===========================
+How to Use 1-my_list.py
+===========================
+
+This module defines `MyList`, a subclass of `list` with an additional method to print the list in sorted order.
+
+Usage
+=====
+
+Basic usage:
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> my_list.append(3)
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> print(my_list)
+    [3, 1, 4, 2]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4]
+    >>> print(my_list)
+    [3, 1, 4, 2]
+
+Error Handling
+=============
+
+Type errors:
+
+::
+
+    >>> my_list.append("string")  # Invalid type
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'str' and 'int'
