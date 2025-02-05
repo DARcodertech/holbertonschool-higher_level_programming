@@ -6,16 +6,17 @@ Rectangle that inherits from BaseGeometry
 
 class BaseGeometry:
     """class that are base geometry"""
+
     def area(self):
         """area that raise a exception"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """validate if integer"""
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
+        if type(value) is not int:
+            raise TypeError("must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError("must be greater than 0")
 
 
 class Rectangle(BaseGeometry):
