@@ -9,4 +9,4 @@ make an object
 def load_from_json_file(filename):
     """make an object"""
     with open(filename, 'r') as f:
-        json.load(f)
+        return json.load(f)
