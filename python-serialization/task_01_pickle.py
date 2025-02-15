@@ -26,7 +26,7 @@ class CustomObject:
         """serialize a class"""
         try:
             with open(filename, 'wb') as f:
-                pickle.dumb(self, f)
+                pickle.dump(self, f)
         except Exception:
             return None
 
