@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import json 
+import json
+
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -33,16 +33,19 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"error": "Endpoint not found"}).encode("utf-8"))
 
+    def do_POST(self):
+        self.send_response(405)
+        self.send_header("Content-type", "application/json")
+        self.end_headers()
+        self.wfile.write(json.dumps({"error": "Method not allowed"}).encode("utf-8"))
 
-def do_POST(self):
-    self._send_json_response(
-        {"error": "Method not allowed"}, status_code=405)
 
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
     server_address = ("", port)
     httpd = server_class(server_address, handler_class)
     print(f"Server started on port {port}")
     httpd.serve_forever()
+
 
 if __name__ == "__main__":
     run()
