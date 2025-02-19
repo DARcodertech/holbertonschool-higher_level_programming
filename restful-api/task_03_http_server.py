@@ -32,7 +32,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps({"error": "Endpoint not found"}).encode("utf-8"))
-    def do_POST(self):
+
+
+def do_POST(self):
     self._send_json_response(
         {"error": "Method not allowed"}, status_code=405)
 
