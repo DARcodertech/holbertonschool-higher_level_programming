@@ -1,2 +1,2 @@
 /*show a list of database*/
-SHOW DATABASES
+SHOW DATABASES /*show a database*/
