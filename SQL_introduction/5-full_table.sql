@@ -1,2 +1,2 @@
--- show columns from table
-SHOW COLUMNS FROM first_table
+-- show columns from table 
+DESCRIBE first_table
