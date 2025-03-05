@@ -1,0 +1,1 @@
+select COUNT(id) FROM first_table
