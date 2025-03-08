@@ -1,9 +1,9 @@
---list a citie 
-SELECT cities.id, cities.name
-FROM cities 
-WHERE cities.state_id = (
+-- list a citie 
+SELECT id, name
+FROM FROM hbtn_0d_usa.cities
+WHERE state_id = (
     SELECT id
-    FROM states
+    FROM hbtn_0d_usa.states
     WHERE name = 'California'
 )
-ORDER BY cities.id ASC;
+ORDER BY id ASC;
