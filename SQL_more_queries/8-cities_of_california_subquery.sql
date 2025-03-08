@@ -1,3 +1,4 @@
+--list a citie 
 SELECT cities.id, SELECT cities.name
 FROM cities 
 WHERE cities.state_id = (
