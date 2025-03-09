@@ -13,13 +13,17 @@ if __name__ == "__main__":
     password = argv[2]
     database = argv[3]
     engine = create_engine(
-             f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}'
-             )
+        f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}',
+        pool_pre_ping=True
+    )
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).order_by(State.id).first()
-    if state:
+    states_with_a = (
+                    session.query(State)
+                    .filter(State.name.like('%a%'))
+                    .order_by(State.id)
+                    .all()
+                    )
+    for state in states_with_a:
         print(f"{state.id}: {state.name}")
-    else:
-        print("Nothing")
     session.close()
