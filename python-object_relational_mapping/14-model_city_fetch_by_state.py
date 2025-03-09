@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-chang a state
+print a city
 """
 
 from sys import argv
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session()
     cities = (
             session.query(State.name, City.id, City.name)
-            .join(City)
+            .join(City, State.id == City.state_id)
             .order_by(City.id)
             .all()
             )
