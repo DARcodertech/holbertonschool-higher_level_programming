@@ -23,8 +23,8 @@ if __name__ == "__main__":
         states_to_delete = session.query(State).filter(
             State.name.like('%a%')
         ).all()
-    for state in states_to_delete:
-        session.delete(state)
+        for state in states_to_delete:
+            session.delete(state)
         session.commit()
     except Exception as e:
         print(f"Error: {e}")
