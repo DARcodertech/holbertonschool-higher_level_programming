@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-delet a state
+chang a state
 """
 
-from sys import argv
+from sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_city import City
 
 if __name__ == "__main__":
     username = argv[1]
@@ -19,14 +20,12 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    try:
-        states_to_delete = session.query(State).filter(
-            State.name.like('%a%')
-        ).all()
-        for state in states_to_delete:
-            session.delete(state)
-        session.commit()
-    except Exception as e:
-        print(f"Error: {e}")
-    finally:
-        session.close()
+    cities = (
+            session.query(State.name, City.id, City.name)
+            .join(City)
+            .order_by(City.id)
+            .all()
+            )
+    for state_name, city_id, city_name in cities:
+        print(f"{state_name}: ({city_id}) {city_name}")
+    session.close()
